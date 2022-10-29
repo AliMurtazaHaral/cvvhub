@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            margin: auto;
+            position: fixed;
+            bottom: 40%;
+
+            right: 40%;
+            border: 3px solid #f1f1f1;
+            
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui five column centered grid">
+        <div class="ui segment" style="margin-top: 10%">
+            <div class="ui fluid mini form">
+
+                <div class="field">
+                    <input style="text-align: center;" class="mini" id="username" name="username" placeholder="Username"
+                        type="text">
+                </div>
+                <div class="field">
+                    <input style="text-align: center;" class="mini" id="password" name="password" placeholder="Password"
+                        type="password">
+                </div>
+                <button style="margin-bottom: 5px;" id="signin" class="fluid compact ui green mini button">Sign
+                    In</button>
+                <button onclick="openForm()" class="fluid ui compact centered mini red button">Registration</button>
+                <div id="capatchaForm" class="formPopup">
+                    <canvas id="captcha">captcha text</canvas>
+                    <input id="textBox" type="text" name="text">
+                    <div id="buttons">
+                        <input id="submitButton" type="submit">
+                        <button id="refreshButton" type="submit">Refresh</button>
+                    </div>
+                    <span id="output"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br><br>
+    <div class="ui five column centered grid">
+        <span style="text-decoration-color: #a4a4a4;color: #a4a4a4">
+            WWW: <a style="text-decoration-color: #a4a4a4;color: #a4a4a4" href="https://cvv24.cc">cvv24.cc</a>
+            <a style="text-decoration-color: #a4a4a4;color: #a4a4a4" href="https://cvvhub.at">cvvhub.at</a>
+            <br>
+            TOR: <a style="text-decoration-color: #a4a4a4;color: #a4a4a4"
+                href="https://cvvamoggrcopaeehscyic6xu3q5lbameo3kv3q3ptpfa5bsq2vrbjsad.onion">cvvamoggrcopaeehscyic6xu3q5lbameo3kv3q3ptpfa5bsq2vrbjsad.onion</a><br>
+            <br><br>BLOG/NEWS: <a style="text-decoration-color: #7a0811;color: #7a0811"
+                href="https://cvv-news.store">CVV-NEWS.STORE</a>
+            <br>
+
+        </span>
+    </div>
+
+
+    <div class="ui modal" id="register_modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Registration
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui header"></div>
+
+                <div class="ui one column centered grid">
+                    <div class="ten wide column">
+                        <table class="ui centered mini compact table">
+                            <tbody id="registration_block">
+                                <tr>
+                                    <td>wait please. generating captcha.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="actions">
+            <button onclick="sign_in();" class="compact ui green mini button">Login</button>
+        </div>
+    </div>
+    <button class="open-button" onclick="openForm()">Open Form</button>
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+html {
+    display: block;
+}
+body, input, button {
+    font-family: monospace,monospace;
+
+}
+body{
+    margin: 8px;
+}
+button{
+    font-family: monospace,monospace;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 10px;
+    margin-left: .5em;
+    border: 1px solid #6e6efc;
+    background: #6e6efc;
+    color: #fff;
+    transition: opacity 1s;
+    opacity: 1;
+}
+body {
+    display: block;
+    margin: 8px;
+}
+#cap{
+    font-family: monospace,monospace;
+    font-size: 2em;
+    text-align: center;
+    margin: 40vh auto 0;
+}
+#ov{
+    font-family: monospace,monospace;
+    font-size: 2em;
+    text-align: center;
+    display: inline;
+    user-select: none;
+    margin: 0 10px;
+    text-shadow: 0 0 4px rgba(0,0,255,0.8);
+}
+input, innput:hover, inputL:focus{
+    font-family: monospace,monospace;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 2em;
+    text-align: center;
+    transition: opacity 1s;
+    padding: 10px;
+    color: #3b3b94;
+    border: 1px solid #6e6efc;
+    background: #fff;
+    opacity: 1;
+}

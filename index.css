@@ -1,0 +1,10 @@
+.nav-item{
+    padding-left: 6rem;
+}
+.dropdown .dropdown-menu{
+    margin-left: 6rem;
+}
+.coins-img{
+    height: 40px;
+    width: 40px
+}

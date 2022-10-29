@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="us">
+
+<head>
+    <title> - - - - - - - - - - - - - - - - </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
+    <div class="ui five column centered grid">
+        <div class="ui segment" style="margin-top: 10%">
+            <div class="ui fluid mini form">
+
+                <div class="field">
+                    <input style="text-align: center;" class="mini" id="username" name="username" placeholder="Username"
+                        type="text">
+                </div>
+                <div class="field">
+                    <input style="text-align: center;" class="mini" id="password" name="password" placeholder="Password"
+                        type="password">
+                </div>
+                <button style="margin-bottom: 5px;" id="signin" class="fluid compact ui green mini button">Sign
+                    In</button>
+                <button onclick="openForm();" class="fluid ui compact centered mini red button">Registration</button>
+
+            </div>
+        </div>
+
+    </div>
+    <br><br><br><br>
+    <div class="ui five column centered grid">
+        <span style="text-decoration-color: #a4a4a4;color: #a4a4a4">
+            WWW: <a style="text-decoration-color: #a4a4a4;color: #a4a4a4" href="https://cvv24.cc">cvv24.cc</a>
+            <a style="text-decoration-color: #a4a4a4;color: #a4a4a4" href="https://cvvhub.at">cvvhub.at</a>
+            <br>
+            TOR: <a style="text-decoration-color: #a4a4a4;color: #a4a4a4"
+                href="https://cvvamoggrcopaeehscyic6xu3q5lbameo3kv3q3ptpfa5bsq2vrbjsad.onion">cvvamoggrcopaeehscyic6xu3q5lbameo3kv3q3ptpfa5bsq2vrbjsad.onion</a><br>
+            <br><br>BLOG/NEWS: <a style="text-decoration-color: #7a0811;color: #7a0811"
+                href="https://cvv-news.store">CVV-NEWS.STORE</a>
+            <br>
+
+        </span>
+    </div>
+
+
+    <div id="capatchaForm" class="formPopup ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Registration
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui header"></div>
+
+                <div class="ui one column centered grid">
+                    <div class="ten wide column">
+                        <canvas id="captcha">captcha text</canvas>
+                        <input id="textBox" type="text" name="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button onclick="sign_in();" class="compact ui green mini button">Login</button>
+        </div>
+    </div>
+    <div id="signinForm" class="loginForm ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Registration
+        </div>
+        <div class="content">
+            <div class="description">
+                <div class="ui header"></div>
+
+                <div class="ui one column centered grid">
+                    <div class="ten wide column">
+                        <table class="ui centered mini compact table">
+                            <tbody id="registration_block">
+                                <tr>
+                                    <td class="six wide">USERNAME:</td>
+                                    <td id="generated_username">va7jx3t2lzgacbj</td>
+                                </tr>
+                                <tr>
+                                    <td>PASSWORD:</td>
+                                    <td id="generated_password">PyMxlKovXIWopxB19wZA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <button onclick="login();" class="compact ui green mini button">Login</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        // document.querySelector() is used to select an element from the document using its ID
+
+        // alphaNums contains the characters with which you want to create the CAPTCHA
+        function openForm() {
+            document.getElementById("capatchaForm").style.display = "block";
+        }
+
+        function sign_in() {
+            document.getElementById("capatchaForm").style.display = "none";
+            document.getElementById("signinForm").style.display = "block";
+        }
+        let alphaNumber = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        let uName = [];
+        let p = [];
+        // This loop generates a random string of 7 characters using alphaNums
+        // Further this string is displayed as a CAPTCHA
+        for (let i = 1; i <= 14; i++) {
+            uName.push(alphaNumber[Math.floor(Math.random() * alphaNumber.length)]);
+        }
+        for (let i = 1; i <= 21; i++) {
+            p.push(alphaNumber[Math.floor(Math.random() * alphaNumber.length)]);
+        }
+        document.getElementById("generated_username").innerHTML = uName.join('');
+        document.getElementById("generated_password").innerHTML = p.join('');
+        function login(){
+            location.replace("./index.html"); 
+        }
+    </script>
+
+    <!--
+  
+  
+  -->
+
+
+    <script src="components/js/allinone.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
