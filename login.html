@@ -22,7 +22,7 @@
                     <input style="text-align: center;" class="mini" id="password" name="password" placeholder="Password"
                         type="password">
                 </div>
-                <button style="margin-bottom: 5px;" id="signin" class="fluid compact ui green mini button">Sign
+                <button style="margin-bottom: 5px;" id="signin" class="fluid compact ui green mini button" onclick="openIndex();">Sign
                     In</button>
                 <button onclick="openForm();" class="fluid ui compact centered mini red button">Registration</button>
 
@@ -128,6 +128,9 @@
         document.getElementById("generated_username").innerHTML = uName.join('');
         document.getElementById("generated_password").innerHTML = p.join('');
         function login(){
+            location.replace("./index.html"); 
+        }
+        function openIndex(){
             location.replace("./index.html"); 
         }
     </script>
